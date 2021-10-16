@@ -997,8 +997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca11bf8e73921844842b2c1deebb627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 5.77
-  viewAngle: 90
+  viewRadius: 6
+  viewAngle: 80
   targetMask:
     serializedVersion: 2
     m_Bits: 512
@@ -1007,7 +1007,10 @@ MonoBehaviour:
     m_Bits: 1024
   visibleTargets: []
   meshResolution: 1
+  edgeResolveIterations: 4
+  edgeDstThreshold: 0.5
   viewMeshFilter: {fileID: 772235117}
+  newcolor: {fileID: 2100000, guid: e7ace9bf9a0063445a5d970d24f4e782, type: 2}
 --- !u!114 &1236952145
 MonoBehaviour:
   m_ObjectHideFlags: 0
