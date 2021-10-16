@@ -77,7 +77,7 @@ public class FOV : MonoBehaviour
 		{
 			float angle = transform.eulerAngles.y - viewAngle / 2 + stepAngleSize * i;
 			ViewCastInfo newViewCast = ViewCast(angle);
-			//Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * viewRadius, Color.black);
+			 //Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * viewRadius, Color.black);
 			if (i > 0)
 			{
 				bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst - newViewCast.dst) > edgeDstThreshold;
