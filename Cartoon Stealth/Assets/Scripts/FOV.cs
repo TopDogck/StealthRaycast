@@ -18,6 +18,7 @@ public class FOV : MonoBehaviour
 	public int edgeResolveIterations;
 	public float edgeDstThreshold;
 
+	public float cutawayDistance = 0.1f;
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
 
@@ -106,7 +107,7 @@ public class FOV : MonoBehaviour
 
 		for (int i = 0; i < vertexCount - 1; i++)
 		{
-			vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);
+			vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i] + Vector3.forward * cutawayDistance);
 
 			if (i < vertexCount - 2)
 			{
