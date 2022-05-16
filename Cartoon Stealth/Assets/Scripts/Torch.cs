@@ -6,6 +6,7 @@ public class Torch : MonoBehaviour
 {
     public Rigidbody rb;
     public CapsuleCollider cc;
+    public BoxCollider bc;
     public Transform player, lightSlot;
 
     public float pickupRange;
@@ -34,12 +35,19 @@ public class Torch : MonoBehaviour
         Vector3 distenceToPlayer = player.position - transform.position;
         if (!equiped && distenceToPlayer.magnitude <= pickupRange && !full && Input.GetKeyDown(KeyCode.E))
         {
+            bc.isTrigger = false;
             PickUp();
         }
 
         if (equiped && Input.GetKeyDown(KeyCode.Q))
         {
+            bc.isTrigger = true;
             Drop();
+        }
+
+        if (equiped && bc.isTrigger == true)
+        {
+            bc.isTrigger = false;
         }
     }
 
